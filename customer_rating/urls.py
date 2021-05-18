@@ -1,0 +1,7 @@
+from django.conf.urls import url
+from django.contrib.auth import views as auth_views
+from . import views
+
+urlpatterns = [
+    url(r'^customer_rating/$', views.CustomerRatingView.as_view(),name='customer_rating')
+]

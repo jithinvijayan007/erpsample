@@ -1,0 +1,3 @@
+create table staff_coupon_master (pk_bint_id bigserial primary key,fk_product_id bigint references products(pk_bint_id), int_employee smallint ,int_not_employee smallint,fk_created_id bigint references auth_user (id),dat_created timestamp,fk_updated_id bigint references auth_user (id),dat_updated timestamp,int_status smallint);
+
+create table staff_coupon_details (pk_bint_id bigserial primary key,fk_master_id bigint references staff_coupon_master(pk_bint_id),json_brand jsonb,json_item_category jsonb,json_item_group jsonb,dbl_discount_percent double precision);

@@ -1,0 +1,4 @@
+INSERT INTO sub_category(fk_main_category_id,vchr_sub_category_name,vchr_sub_category_value,int_sub_category_order,vchr_icon_name) VALUES((SELECT pk_bint_id from main_category WHERE vchr_main_category_name = 'MASTER'),'ACCOUNTS','accounts',20,'mdi-square-inc-cash');
+INSERT INTO menu_category(vchr_menu_category_name,fk_sub_category_id,vchr_menu_category_value,int_menu_category_order,bln_has_children,vchr_addurl) VALUES('Accounts Map List',(SELECT pk_bint_id from sub_category WHERE vchr_sub_category_name = 'ACCOUNTS'),'accountsmaplist',1,'false','/accounting/listaccouting');
+
+INSERT INTO menu_category(vchr_menu_category_name,fk_sub_category_id,vchr_menu_category_value,int_menu_category_order,bln_has_children,vchr_addurl) VALUES('Accounts Map Add',(SELECT pk_bint_id from sub_category WHERE vchr_sub_category_name = 'ACCOUNTS'),'accountsmapadd',1,'false','/accounting/addaccouting');
